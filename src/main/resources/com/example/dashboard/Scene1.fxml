@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<!-- The root node of the FXML document -->
+
+<AnchorPane prefHeight="1064.0" prefWidth="1637.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dashboard.Controller">
+
+    <!-- Sidebar layout -->
+    <VBox prefHeight="1173.0" prefWidth="419.0" styleClass="sidebar">
+        <!-- Header label for the sidebar -->
+        <Label prefHeight="75.0" prefWidth="423.0" style="-fx-background-color: #00A2D3;" text="Admin panel" textFill="WHITE">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+            <font>
+                <Font name="Ebrima" size="18.0" />
+            </font>
+        </Label>
+        <!-- Button for switching to scene1 -->
+        <HBox prefHeight="59.0" prefWidth="418.0">
+            <Button fx:id="switchButton" onAction="#switchToScene1" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Customer behaviour" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+        </HBox>
+        <!-- Button for switching to scene2 -->
+        <HBox prefHeight="59.0" prefWidth="418.0">
+            <Button fx:id="switchButton2" onAction="#switchToScene2" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Trends" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+        </HBox>
+        <!-- Button for switching to scene3 -->
+        <HBox prefHeight="59.0" prefWidth="418.0">
+            <Button fx:id="switchButton3" onAction="#switchToScene3" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Product Popularity" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+        </HBox>
+        <HBox prefHeight="59.0" prefWidth="418.0">
+            <Button fx:id="switchButton4" onAction="#switchToScene4" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Data Entry" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+
+    <!-- Main content area -->
+    <VBox layoutX="419.0" layoutY="-1.0" prefHeight="1173.0" prefWidth="1381.0" styleClass="parent">
+        <!-- Header pane with drop shadow effect -->
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1381.0" style="-fx-background-color: #fff;">
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" height="10.0" radius="4.5" width="10.0">
+                    <color>
+                        <Color red="0.75" green="0.7048611044883728" blue="0.7048611044883728" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <!-- Header label -->
+            <Label fx:id="sceneLabel" layoutX="30.0" layoutY="29.0" text="" textFill="#7c8184">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+        </Pane>
+
+        <!-- Container for displaying charts -->
+        <VBox id="scene1" fx:id="chartContainer" prefWidth="1362.0" spacing="10.0" style="-fx-padding: 10px;">
+            <Label fx:id="dataStatusLabel" alignment="CENTER" prefHeight="32.0" prefWidth="1361.0" text="No data available" textFill="#f80000" visible="false">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font></Label>
+            <Label fx:id="dataStatusLabel2" alignment="CENTER" prefHeight="32.0" prefWidth="1361.0" text="Data available" visible="false">
+            <font>
+               <Font size="24.0" />
+            </font></Label>
+
+
+
+        </VBox>
+    </VBox>
+</AnchorPane>
