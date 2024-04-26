@@ -3,81 +3,79 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <!-- The root node of the FXML document -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="935.0" prefWidth="1828.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dashboard.Controller">
-
-    <!-- Sidebar layout -->
-    <VBox prefHeight="936.0" prefWidth="419.0" styleClass="sidebar">
-        <!-- Header label for the sidebar -->
-        <Label prefHeight="75.0" prefWidth="429.0" style="-fx-background-color: #00A2D3;" text="Admin panel" textFill="WHITE">
-            <padding>
-                <Insets left="10.0" />
-            </padding>
-            <font>
-                <Font name="Ebrima" size="18.0" />
-            </font>
-        </Label>
-        <!-- Button for switching to scene1 -->
-        <HBox prefHeight="59.0" prefWidth="418.0">
-            <Button fx:id="switchButton" onAction="#switchToScene1" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Customer behaviour" textFill="WHITE">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </Button>
-        </HBox>
-        <!-- Button for switching to scene2 -->
-        <HBox prefHeight="59.0" prefWidth="418.0">
-            <Button fx:id="switchButton2" onAction="#switchToScene2" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Trends" textFill="WHITE">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </Button>
-        </HBox>
-        <!-- Button for switching to scene3 -->
-        <HBox prefHeight="59.0" prefWidth="418.0">
-            <Button fx:id="switchButton3" onAction="#switchToScene3" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Product Popularity" textFill="WHITE">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </Button>
-        </HBox>
-        <HBox prefHeight="59.0" prefWidth="418.0">
-            <Button fx:id="switchButton4" onAction="#switchToScene4" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Data Entry" textFill="WHITE">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </Button>
-        </HBox>
-    </VBox>
-    <!-- Main content area -->
-    <VBox layoutX="418.0" prefHeight="935.0" prefWidth="1411.0" styleClass="parent">
-        <!-- Header pane with drop shadow effect -->
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="1403.0" style="-fx-background-color: #fff;">
-            <effect>
-                <DropShadow blurType="ONE_PASS_BOX" height="10.0" radius="4.5" width="10.0">
-                    <color>
-                        <Color red="0.75" green="0.7048611044883728" blue="0.7048611044883728" />
-                    </color>
-                </DropShadow>
-            </effect>
-            <!-- Header label -->
-            <Label fx:id="sceneLabel" layoutX="30.0" layoutY="29.0" text="" textFill="#7c8184">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </Label>
-        </Pane>
-        <!-- Container for displaying charts -->
-        <VBox id="scene3" fx:id="chartContainer" prefWidth="1362.0" spacing="10.0" style="-fx-padding: 10px;">
+<BorderPane prefHeight="810.0" prefWidth="1477.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dashboard.Controller">
+   <left>
+   
+          <!-- Sidebar layout -->
+       <VBox prefHeight="936.0" prefWidth="419.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+           <!-- Button for switching to scene1 -->
+           <HBox prefHeight="59.0" prefWidth="418.0">
+               <Button fx:id="switchButton" onAction="#switchToScene1" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Customer behaviour" textFill="WHITE">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Button>
+           </HBox>
+           <!-- Button for switching to scene2 -->
+           <HBox prefHeight="59.0" prefWidth="418.0">
+               <Button fx:id="switchButton2" onAction="#switchToScene2" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Trends" textFill="WHITE">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Button>
+           </HBox>
+           <!-- Button for switching to scene3 -->
+           <HBox prefHeight="59.0" prefWidth="418.0">
+               <Button fx:id="switchButton3" onAction="#switchToScene3" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Product Popularity" textFill="WHITE">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Button>
+           </HBox>
+           <HBox prefHeight="59.0" prefWidth="418.0">
+               <Button fx:id="switchButton4" onAction="#switchToScene4" prefHeight="77.0" prefWidth="438.0" styleClass="btns" text="Data Entry" textFill="WHITE">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Button>
+           </HBox>
+       </VBox>
+   </left>
+   <center>
+       <!-- Main content area -->
+       <VBox prefHeight="935.0" prefWidth="1411.0" styleClass="parent" BorderPane.alignment="CENTER">
+           <!-- Container for displaying charts -->
+           <VBox id="scene3" fx:id="chartContainer" prefWidth="1362.0" spacing="10.0" style="-fx-padding: 10px;">
         </VBox>
-    </VBox>
-</AnchorPane>
+       </VBox>
+   </center>
+   <top>
+      <SplitPane dividerPositions="0.2928813559322034" prefHeight="81.0" prefWidth="1058.0" BorderPane.alignment="CENTER">
+         <items>
+              <!-- Header label for the sidebar -->
+              <Label alignment="CENTER" prefHeight="75.0" prefWidth="418.0" style="-fx-background-color: #00A2D3;" text="Admin panel" textFill="WHITE">
+                  <padding>
+                      <Insets left="10.0" />
+                  </padding>
+                  <font>
+                      <Font name="Ebrima" size="18.0" />
+                  </font>
+              </Label>
+               <!-- Header label -->
+               <Label fx:id="sceneLabel" alignment="CENTER" prefHeight="57.0" prefWidth="1045.0" text="" textFill="#7c8184">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Label>
+         </items>
+      </SplitPane>
+   </top>
+</BorderPane>
